@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp1.Heatmap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+           Closing="Window_Closing"
+        Title="Heatmap" Height="450" Width="800">
+    <Grid  x:Name="Grid_Thermo" ShowGridLines="False" Background="#fcfcfcfc">
+
+        <!--　カラム Grid 横方向の大きさ指定。 "AUTO"は、横幅を変更するGridSplitterの部分  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"  MinWidth="100"/>
+            <ColumnDefinition Width="AUTO"/>
+            <ColumnDefinition Width="0.1*" MinWidth="10" />
+        </Grid.ColumnDefinitions>
+
+        <!--横幅を変更する GridSplitter-->
+        <GridSplitter Grid.Row="0" Grid.Column="1"   Grid.RowSpan="5" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Gainsboro"/>
+
+
+        <WpfPlot Name="wpfPlot_Heatmap"  Margin="20" Grid.Row ="0" Grid.Column="0" />
+
+        <Grid Grid.Row="0"  Grid.Column="2">
+            <StackPanel VerticalAlignment="Top" Margin="0,20,0,0">
+                <TextBlock x:Name="TB_max_val"   Text="100" FontFamily="MS ゴシック" FontSize="16" />
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="0,0,0,0">
+                <TextBlock x:Name="TB_mid_val"   Text="50" FontFamily="MS ゴシック" FontSize="16" />
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Margin="0,0,0,50">
+                <TextBlock x:Name="TB_min_val" Text ="0" FontFamily="MS ゴシック" FontSize="16"  />
+            </StackPanel>
+          
+        </Grid>
+
+    </Grid>
+
+</Window>

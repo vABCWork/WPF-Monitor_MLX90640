@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp1.MLX90640"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MLX90640 (Parameter,cal.debug)" Height="450" Width="800" FontSize="14" FontFamily="MS UI Gothic"  Background="White" Foreground="#333333" >
+    <Grid>
+        <!--　カラム Grid 横方向の大きさ指定。 "AUTO"は、横幅を変更するGridSplitterの部分  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.2*"  MinWidth="100"/>
+            <ColumnDefinition Width="AUTO"/>
+            <ColumnDefinition Width="1*" MinWidth="100" />
+        </Grid.ColumnDefinitions>
+
+        <!--横幅を変更する GridSplitter-->
+        <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Gainsboro"/>
+
+        <DockPanel LastChildFill="True" Grid.Row="0" Grid.Column="0">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto"  DockPanel.Dock="Left">
+                <TextBox x:Name="Para_Text"  DockPanel.Dock="Left" />
+            </ScrollViewer>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True"  Grid.Row="0" Grid.Column="2">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto"  DockPanel.Dock="Left">
+                <TextBox x:Name="Result_Text"  DockPanel.Dock="Left" />
+            </ScrollViewer>
+        </DockPanel>
+
+
+    </Grid>
+</Window>
